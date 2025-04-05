@@ -1,6 +1,7 @@
 extends Control
 
 const DAMP := 5.0
+const ACCEL := 0.2
 
 var is_hovered := false
 var is_held := false
@@ -23,7 +24,7 @@ func _process(delta: float) -> void:
 		
 		var mouse_world_pos = get_viewport().get_mouse_position() * 1200 / get_viewport().get_visible_rect().size.x
 		
-		velocity += mouse_world_pos - (size / 2) - position
+		velocity += (mouse_world_pos - (size / 2) - position) * ACCEL
 
 func _on_mouse_entered():
 	is_hovered = true
