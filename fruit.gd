@@ -26,20 +26,15 @@ func _process(delta: float) -> void:
 		velocity += mouse_world_pos - (size / 2) - position
 
 func _on_mouse_entered():
-	
 	is_hovered = true
 
 func _on_mouse_exited():
-	
-	if !is_held:
-		is_hovered = false
+	is_hovered = false
 
 func _input(event) -> void:
 	
 	if event.is_action_released("click"):
 		is_held = false
-	
-	elif is_hovered:
 		
-		if event.is_action_pressed("click"):
-			is_held = true
+	if is_hovered and event.is_action_pressed("click"):
+		is_held = true
