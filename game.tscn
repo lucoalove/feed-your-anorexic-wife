@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7gxbkmvhao7v"]
+[gd_scene load_steps=4 format=3 uid="uid://c7gxbkmvhao7v"]
 
 [ext_resource type="Script" uid="uid://khdn3y43ciwf" path="res://camera_lock_width.gd" id="1_80nbo"]
+[ext_resource type="Texture2D" uid="uid://okuruo4lqcip" path="res://fruit_blueberry.png" id="2_feb5d"]
+[ext_resource type="Script" uid="uid://cr8g0x26elad0" path="res://fruit.gd" id="3_fc0e3"]
 
 [node name="Root" type="Node2D"]
 
@@ -13,3 +15,9 @@ offset_top = -1000.0
 offset_right = 1000.0
 offset_bottom = 1000.0
 color = Color(0.0588235, 0.0666667, 0.0980392, 1)
+
+[node name="Blueberry" type="TextureRect" parent="."]
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("2_feb5d")
+script = ExtResource("3_fc0e3")

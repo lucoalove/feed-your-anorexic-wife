@@ -1,20 +1,28 @@
 extends Camera2D
 
-# For making the cursor appear different on a control node: https://docs.godotengine.org/en/stable/classes/class_control.html#class-control-property-mouse-default-cursor-shape
-
-var cursor_arrow = load("res://cursor_arrow.png")
+var ARROW       = load("res://cursor_arrow.png")
+var GRAB_CLOSED = load("res://cursor_grab_closed.png")
+var GRAB_OPEN   = load("res://cursor_grab_open.png")
 
 func _ready() -> void:
 	
 	get_tree().get_root().size_changed.connect(resize)
 	resize()
 	
-	Input.set_custom_mouse_cursor(cursor_arrow, Input.CursorShape.CURSOR_ARROW, Vector2(0, 0))
+	Input.set_custom_mouse_cursor(ARROW, Input.CursorShape.CURSOR_ARROW, Vector2(0, 0))
+	set_click_state(false)
 
 func resize() -> void:
 	var z := get_window().size.x / 1200.0
 	zoom.x = z
 	zoom.y = z
+
+func set_click_state(is_clicking):
+	
+	if is_clicking:
+		Input.set_custom_mouse_cursor(GRAB_CLOSED, Input.CursorShape.CURSOR_DRAG, Vector2(16, 8))
+	else:
+		Input.set_custom_mouse_cursor(GRAB_OPEN, Input.CursorShape.CURSOR_DRAG, Vector2(16, 8))
 
 func _input(event) -> void:
 	
@@ -23,6 +31,6 @@ func _input(event) -> void:
 	# arrow-click and grab
 	
 	if event.is_action_pressed("click"):
-		Input.set_custom_mouse_cursor(null, Input.CursorShape.CURSOR_ARROW, Vector2(0.2, 0.2))
+		set_click_state(true)
 	elif event.is_action_released("click"):
-		Input.set_custom_mouse_cursor(cursor_arrow, Input.CursorShape.CURSOR_ARROW, Vector2(0, 0))
+		set_click_state(false)
