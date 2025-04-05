@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://khdn3y43ciwf" path="res://camera_lock_width.gd" id="1_80nbo"]
 [ext_resource type="Texture2D" uid="uid://okuruo4lqcip" path="res://fruit_blueberry.png" id="2_feb5d"]
-[ext_resource type="Script" uid="uid://cr8g0x26elad0" path="res://fruit.gd" id="3_fc0e3"]
+[ext_resource type="Script" uid="uid://bohbs78vf024w" path="res://fruit_pile.gd" id="4_fc0e3"]
 
 [node name="Root" type="Node2D"]
 
@@ -15,8 +15,11 @@ offset_right = 2000.0
 offset_bottom = 2000.0
 color = Color(0.0588235, 0.0666667, 0.0980392, 1)
 
-[node name="Blueberry" type="TextureRect" parent="."]
-offset_right = 64.0
-offset_bottom = 64.0
+[node name="BlueberryPile" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 89.0
+offset_top = 440.0
+offset_right = 153.0
+offset_bottom = 504.0
 texture = ExtResource("2_feb5d")
-script = ExtResource("3_fc0e3")
+script = ExtResource("4_fc0e3")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc17hn6j747sn"]
+
+[ext_resource type="Texture2D" uid="uid://okuruo4lqcip" path="res://fruit_blueberry.png" id="1_t45jj"]
+[ext_resource type="Script" uid="uid://cr8g0x26elad0" path="res://fruit.gd" id="2_7yftu"]
+
+[node name="Blueberry" type="TextureRect"]
+texture_filter = 1
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("1_t45jj")
+script = ExtResource("2_7yftu")
