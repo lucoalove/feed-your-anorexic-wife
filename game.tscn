@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7gxbkmvhao7v"]
+[gd_scene load_steps=5 format=3 uid="uid://c7gxbkmvhao7v"]
 
 [ext_resource type="Script" uid="uid://khdn3y43ciwf" path="res://camera_lock_width.gd" id="1_80nbo"]
 [ext_resource type="Texture2D" uid="uid://okuruo4lqcip" path="res://fruit_blueberry.png" id="2_feb5d"]
+[ext_resource type="Texture2D" uid="uid://dewkxnf8fs8l6" path="res://anorexic_wife_placeholder.png" id="4_7jktm"]
 [ext_resource type="Script" uid="uid://bohbs78vf024w" path="res://fruit_pile.gd" id="4_fc0e3"]
 
 [node name="Root" type="Node2D"]
@@ -23,3 +24,10 @@ offset_right = 153.0
 offset_bottom = 504.0
 texture = ExtResource("2_feb5d")
 script = ExtResource("4_fc0e3")
+
+[node name="Wife" type="TextureRect" parent="."]
+offset_left = 804.0
+offset_top = 65.0
+offset_right = 1004.0
+offset_bottom = 565.0
+texture = ExtResource("4_7jktm")
