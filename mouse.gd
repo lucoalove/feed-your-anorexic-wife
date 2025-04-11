@@ -29,8 +29,6 @@ func remove_grabby_target():
 
 func reload_visual():
 	
-	print(grabby_targets)
-	
 	if grabby_targets > 0:
 		
 		if down:

@@ -9,8 +9,6 @@ var velocity := Vector2(0, 0)
 
 func _ready() -> void:
 	
-	# https://docs.godotengine.org/en/stable/classes/class_control.html#class-control-property-mouse-default-cursor-shape
-	
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
 
